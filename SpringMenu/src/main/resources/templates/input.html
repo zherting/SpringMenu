@@ -1,0 +1,18 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert new Menu</title>
+</head>
+<body>
+<form name='f' th:object="${newMenu}" th:action="@{/inputMenu}" method='POST'>
+
+Name:<input name="name" size="20"> <br />
+Category: <input name="category" size="20"> <br />
+Price: <input name="price" size="20"> <br />
+Allergy Alert: <input name="details.allergyalert" size="20"> <br />
+Spicy Level: <input name="details.spicylevel" size="20"> <br />
+
+<input name="submit" type="submit" value="submit" />
+</form>
+</body>
+</html>

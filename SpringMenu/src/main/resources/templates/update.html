@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Menu</title>
+</head>
+<body>
+<form action="#" th:action="@{/update/{id}(id=${menu.id})}" th:object="${menu}" method="post">
+
+<label for="name">Name</label>
+<input type="text" th:field="*{name}" id="name" placeholder="Name">
+<span th:if="${#fields.hasErrors('name')}" th:erros="*{name}"></span>
+
+<label for="category">Category</label>
+<input type="text" th:field="*{category}" id="category" placeholder="Category">
+<span th:if="${#fields.hasErrors('category')}" th:erros="*{category}"></span>
+
+<label for="price">Price</label>
+<input type="text" th:field="*{price}" id="price" placeholder="Price">
+<span th:if="${#fields.hasErrors('price')}" th:erros="*{price}"></span>
+
+<label for="details.allergyalert">Allergy Alert</label>
+<input type="text" th:field="*{details.allergyalert}" id="details.allergyalert" placeholder="Allergy Alert">
+<span th:if="${#fields.hasErrors('details.allergyalert')}" th:erros="*{details.allergyalert}"></span>
+
+<label for="details.spicylevel">Spicy Level</label>
+<input type="text" th:field="*{details.spicylevel}" id="details.spicylevel" placeholder="Spicy Level">
+<span th:if="${#fields.hasErrors('details.spicylevel')}" th:erros="*{details.spicylevel}"></span>
+
+<input type="submit" value="Update Menu">
+</form>
+</body>
+</html>
